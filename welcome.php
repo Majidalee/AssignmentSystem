@@ -2,7 +2,7 @@
 
 session_start();
 $username=$_SESSION['username'];
-echo $username;
+// echo $username;
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 {
     header("location: login.php");
@@ -12,7 +12,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
         $statement="SELECT `assignment` FROM `users` WHERE `users`.`username` = '$username'";
         $result=mysqli_query($conn,$statement);
         $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        print_r($posts);
+        // print_r($posts);
       	//var_dump($posts);
 
 	// Free Result
