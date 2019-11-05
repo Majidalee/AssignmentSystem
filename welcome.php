@@ -1,11 +1,26 @@
 <?php
 
 session_start();
-
+$username=$_SESSION['username'];
+echo $username;
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 {
     header("location: login.php");
 }
+ 
+        require_once "config.php";
+        $statement="SELECT `assignment` FROM `users` WHERE `users`.`username` = '$username'";
+        $result=mysqli_query($conn,$statement);
+        $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        print_r($posts);
+      	//var_dump($posts);
+
+	// Free Result
+	      mysqli_free_result($result);
+        
+	// Close Connection
+	      mysqli_close($conn);
+
 
 
 ?>
@@ -84,18 +99,12 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
       <th scope="row">1</th>
       <td><?php echo $_SESSION['username']?></td>
       <td>
-        <?php
-        require_once "config.php";
-        $statement="SELECT `assignment` FROM `users`";
-        $result=mysqli_query($conn,$statement);
-       if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-        while($row = mysqli_fetch_assoc($result)) {
-        echo $row["assignment"].'<br>';
-      }
-        }
-
+          <?php foreach($posts as $post) ?>
+        <h3>
+        <?php 
+        echo $post['assignment']; 
         ?>
+        </h3>                            
       </td>
       <td>@mdo</td>
     </tr>
