@@ -88,9 +88,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 <table class="table table-dark">
   <thead>
     <tr>
+      <th scope="col">id</th>
       <th scope="col">Name</th>
-      <th scope="col">fatherName</th>
-      <th scope="col">reg no:</th>
+      <th scope="col">assignment</th>
       <th scope="col">batch</th>
     </tr>
   </thead>
@@ -100,13 +100,13 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
       <td><?php echo $_SESSION['username']?></td>
       <td>
           <?php foreach($posts as $post) ?>
-        <h3>
+        <p>
         <?php 
         echo $post['assignment']; 
         ?>
-        </h3>                            
+        </p>                            
       </td>
-      <td>@mdo</td>
+      <td>2k16</td>
     </tr>
    
   </tbody>
