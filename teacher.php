@@ -1,13 +1,13 @@
 <?php
 require_once "config.php";
-
+session_start();
 print_r($_POST);
 $data=$_POST['text'];
+// print_r($_SERVER['username']);
 
-
-$query="SELECT * FROM `users`";
+$query="UPDATE `users` SET `assignment` = '$data' WHERE `users`.`username` = 'Majid';";
 $result=mysqli_query($conn, $query);
-
+// UPDATE `users` SET `assignment` = 'do that.?' WHERE `users`.`id` = 2;
 ?>
 
 
@@ -21,23 +21,7 @@ $result=mysqli_query($conn, $query);
 </head>
 <body>
     <form action="#" method="post"><br>
-    select user:
-    <select>
-        <option name="student" >select student name</option>
-        <?php
-        require_once "config.php";
-        $statement="SELECT `username` FROM `users`";
-        $result=mysqli_query($conn,$statement);
-       if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-        while($row = mysqli_fetch_assoc($result)) {
-         echo "<option>$row[username]</option>";
-      }
-        }
-
-        
-        ?>
-    </select>
+    select user
     <br>
     <textarea name="text" id="" cols="30" rows="10">ENter assignment field</textarea><br>
     select user:<input name="submit" type="submit">
