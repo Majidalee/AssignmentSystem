@@ -34,12 +34,12 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="bootstrap.min.css">
     <title>PHP login system!</title>
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg">
   <a class="navbar-brand" href="#">Assignment system</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -85,7 +85,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
 <!-- ======================================================= -->
 
 
-<table class="table table-dark">
+<table class="table table-borderless table-success">
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -100,16 +100,20 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !==true)
       <td><?php echo $_SESSION['username']?></td>
       <td>
           <?php foreach($posts as $post) ?>
-        <p>
+        <pre>
         <?php 
-        echo $post['assignment']; 
+        
+        echo $post['assignment'];
         ?>
-        </p>                            
+        </pre>                            
       </td>
       <td>2k16</td>
     </tr>
    
   </tbody>
+ 
+
+
 </table>
 
 

@@ -33,7 +33,7 @@
 
         <br>
         <br>
-        <textarea name="text" id="" class="form-control" cols="30" rows="10">ENter assignment field</textarea><br>
+        <textarea name="text" class="md-textarea form-control" id="">ENter assignment field</textarea><br>
         <input name="submit" class="btn btn-success btn-lg btn-block" type="submit">
     </form>
 </body>
