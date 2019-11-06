@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+ 
 </head>
 
-<body>
+<body class="container text-align-center">
+
+    <h1 class="text-center">Teacher view</h1>
     <form action="#" method="post"><br>
         select user
         <br>
-        <select name="student">
+        <select name="student" class="form-control">
             <option default> select student name</option>
             <?php
         require_once "config.php";
@@ -25,42 +26,15 @@
     // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
          echo "<option value='$row[username]'>$row[username]</option>";
-      }
-        }
-
-        
-        ?>
+    }
+    }
+    ?>
         </select>
 
         <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <br>
-        <textarea name="text" id="" cols="30" rows="10">ENter assignment field</textarea><br>
-        select user:<input name="submit" type="submit">
-
-
-
-
-
-
-
-
+        <textarea name="text" id="" class="form-control" cols="30" rows="10">ENter assignment field</textarea><br>
+        <input name="submit" class="btn btn-success btn-lg btn-block" type="submit">
     </form>
 </body>
 
